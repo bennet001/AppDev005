@@ -1,6 +1,0 @@
-c:\users\danny\documents\visual studio 2012\Projects\Analytics\Analytics\bin\Debug\Analytics.exe.config
-c:\users\danny\documents\visual studio 2012\Projects\Analytics\Analytics\bin\Debug\Analytics.exe
-c:\users\danny\documents\visual studio 2012\Projects\Analytics\Analytics\bin\Debug\Analytics.pdb
-c:\users\danny\documents\visual studio 2012\Projects\Analytics\Analytics\obj\Debug\Analytics.csprojResolveAssemblyReference.cache
-c:\users\danny\documents\visual studio 2012\Projects\Analytics\Analytics\obj\Debug\Analytics.exe
-c:\users\danny\documents\visual studio 2012\Projects\Analytics\Analytics\obj\Debug\Analytics.pdb
