@@ -1,1 +1,13 @@
 C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\bin\Debug\ProjectMain.exe.config
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\bin\Debug\ProjectMain.exe
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\bin\Debug\ProjectMain.pdb
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.csprojResolveAssemblyReference.cache
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\MainWindow.baml
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\MainWindow.g.cs
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\App.g.cs
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain_MarkupCompile.cache
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.g.resources
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.Properties.Resources.resources
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.csproj.GenerateResource.Cache
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.exe
+C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.pdb
