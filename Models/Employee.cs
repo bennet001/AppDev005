@@ -1,8 +1,6 @@
 ﻿
 
 // The namespace will be changed as we combine our code.
-
-
 namespace EmployeeControlApp.Models
 {
 	public class Employee
