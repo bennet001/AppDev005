@@ -1,0 +1,34 @@
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\bin\Debug\TaskIT.exe.config
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\bin\Debug\TaskIT.exe
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\bin\Debug\TaskIT.pdb
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT.csprojResolveAssemblyReference.cache
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\MainWindow.baml
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\MainWindow.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\App.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT_MarkupCompile.cache
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT.g.resources
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT.Properties.Resources.resources
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT.csproj.GenerateResource.Cache
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT.exe
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT.pdb
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\UserControls\TestUserControl.baml
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\UserControls\TestUserControl.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\Project\TaskIT\TaskIT\obj\Debug\TaskIT_MarkupCompile.lref
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\bin\Debug\TaskIT.exe.config
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT.exe
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT.pdb
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\bin\Debug\TaskIT.exe
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\bin\Debug\TaskIT.pdb
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT.csprojResolveAssemblyReference.cache
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\UserControls\CreateJobPopup.baml
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\UserControls\CreateJobPopup.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\App.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT_MarkupCompile.cache
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT_MarkupCompile.lref
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT.g.resources
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT.Properties.Resources.resources
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\TaskIT.csproj.GenerateResource.Cache
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\MainWindow.g.cs
+C:\Users\Christopher Rains\Desktop\Neumont\PRO160 - Application Development Lab\AppDev005\Supervisor Window- CJ\TaskIT\TaskIT\obj\Debug\MainWindow.baml
