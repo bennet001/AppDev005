@@ -6,65 +6,79 @@ using System.Threading.Tasks;
 
 namespace ProjectMain
 {
-    class Job
+    public class Job
     {
-        private readonly int JobID;
-        private readonly int CommonJobID;
-        private string JobName;
-        private string Description;
-        private DateTime TimeStarted;
-        private DateTime TimeFinished;
-        private DateTime TimeDue;
-        private bool IsCompleted;
+        public enum Priority
+        {
+            Green,
+            Yellow,
+            Red
+        };
+        private readonly int jobID;
+        private readonly int commonJobID;
+        private string jobName;
+        private string description;
+        private DateTime timeStarted;
+        private DateTime timeFinished;
+        private TimeSpan totalTime;
+        private DateTime timeDue;
+        private bool isCompleted;
 
         public int ID
         {
-            get { return JobID; }
+            get { return jobID; }
         }
 
-        public int commonID
+        public int CommonID
         {
-            get { return CommonJobID; }
+            get { return commonJobID; }
         }
 
-        public string jobName
+        public string JobName
         {
-            get { return JobName; }
-            set { JobName = value; }
+            get { return jobName; }
+            set { jobName = value; }
         }
 
-        public string description
+        public string Description
         {
-            get { return Description; }
-            set { Description = value; }
+            get { return description; }
+            set { description = value; }
         }
 
-        public DateTime timeStarted
+        public DateTime TimeStarted
         {
             get { return timeStarted; }
-            set { TimeStarted = value; }
+            set { timeStarted = value; }
         }
 
-        public DateTime timeFinished
+        public DateTime TimeFinished
         {
             get { return timeFinished; }
-            set { TimeFinished = value; }
+            set { timeFinished = value; }
         }
 
-        public DateTime timeDue
+        public DateTime TimeDue
         {
-            get { return TimeDue; }
-            set { TimeDue = value; }
+            get { return timeDue; }
+            set { timeDue = value; }
         }
 
-        public Job(string jobname, string describe, int jobID, int commonID, DateTime timeStart, DateTime dueDate)
+        public TimeSpan TotalTime
         {
-            JobID = jobID;
-            CommonJobID = commonID;
+            get { return totalTime; }
+            set { totalTime = TimeFinished - TimeStarted; }
+        }
+
+        public Job(string jobname, Priority priority, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ")
+        {
+            this.jobID = jobID;
+            this.commonJobID = commonID;
             jobName = jobname;
             description = describe;
-            this.timeStarted = timeStart;
-            timeDue = dueDate;
+            TimeStarted = timeStart;
+            TimeDue = dueDate;
+            Priority pry = priority;
         }
     }
 }
