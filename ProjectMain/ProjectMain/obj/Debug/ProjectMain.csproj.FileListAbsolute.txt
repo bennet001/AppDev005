@@ -16,3 +16,6 @@ C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug
 C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\OurUC\JobUserControl1.g.cs
 C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Benjamin Gonzalez\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\JobUC.baml
+C:\Users\Elizabeth Grace\Desktop\AppDev005\ProjectMain\ProjectMain\bin\Debug\ProjectMain.exe.config
+C:\Users\Elizabeth Grace\Desktop\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.exe
+C:\Users\Elizabeth Grace\Desktop\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.pdb
