@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMain
 {
-    class Analytics
+    public class Analytics
     {
 
         public Analytics()
@@ -27,18 +27,14 @@ namespace ProjectMain
             return time;
         }
 
-        public TimeSpan AverageTime(List<DateTime> times) // redo
+        public TimeSpan AverageTime(List<TimeSpan> times)
         {
             TimeSpan finalTime = TimeSpan.Zero;
             for (int i = 0; i < times.Count; i++)
             {
-                TimeSpan time1 = times[i].TimeOfDay;
-                i++;
-                TimeSpan time2 = times[i].TimeOfDay;
-                TimeSpan time3 = time1 + time2;
-                TimeSpan dividedTime = new TimeSpan(time3.Ticks / 2);
-                finalTime += dividedTime;
+                finalTime += times[i];
             }
+            finalTime = new TimeSpan(finalTime.Ticks/times.Count); 
             return finalTime;
         }
 
@@ -56,7 +52,7 @@ namespace ProjectMain
 
         public TimeSpan EmployeeTaskAverage(int EmployeeID)
         {
-            List<DateTime> time = new List<DateTime>();
+            List<TimeSpan> time = new List<TimeSpan>();
             /**Grab all jobs with employee id
             if(job has righ employee id)
              * time.add(job);
