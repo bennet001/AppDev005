@@ -8,80 +8,41 @@ namespace ProjectMain
 {
     public class JobTest
     {
-        private readonly int JobID;
-        public int ID
-        {
-            get { return JobID; }
-        }
+        public int JobID { get; private set; }
 
-        private string JobName;
-        public string jobName
-        {
-            get { return JobName; }
-            set
-            {
-                JobName = value;
-            }
-        }
+        public string JobName { set; get; }
 
-        private string Description;
-        public string description
-        {
-            get { return Description; }
-            set
-            {
-                Description = value;
-            }
-        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Description { get; set; }
         
         //These will be current time no format added. Leave alone
-        private static DateTime TimeStarted;
-        public DateTime timeStarted
-        {
-            get { return TimeStarted; }
-            set
-            {
-                TimeStarted = value;
-            }
-        }
+        public static DateTime TimeStarted { get; set; }
 
-        private static DateTime TimeFinished;
-        public DateTime timeFinished
-        {
-            get { return TimeFinished; }
-            set
-            {
-                TimeFinished = value;
-            }
-        }
+        public static DateTime TimeFinished { get; set; }
 
         //These will be month and day format to fit the mold
-        private static DateTime DateAssigned;
-        public DateTime dateassigned { get { return DateAssigned; } set { DateAssigned = value; } }
+        public DateTime DateAssigned { get; set; }
 
-        private static DateTime DateDue;
-        public DateTime datedue { get { return DateDue; } set { DateDue = value; } }
+        public DateTime DateDue { get; set; }
 
-        private static DateTime DateCompleted;
-        public DateTime datecompleted { get { return DateCompleted; } set { DateCompleted = value; } }
+        public DateTime DateCompleted { get; set; }
 
-        private bool IsCompleted;
-        public bool iscompleted { get { return IsCompleted; } set { IsCompleted = value; } }
+        public bool IsCompleted { get; set; }
 
-        private string _employeename;
-        public string EmployeeName { get { return _employeename; } set { _employeename = value; } }
+        public string EmployeeName { get; set; }
         
-        private string _supereename = "Maxwell";
-        public string SupereeName { get { return _supereename; } set { _supereename = value; } }
+        public string SupereeName { get; set; }
        
         public JobTest(DateTime started, string jobname = "Power", string describe = "Restore Functionality to turbine", int jobID = 25, string employee = "David") 
         {
             JobID = jobID;
-            jobName = jobname;
-            description = describe;            
-            timeStarted = started;
+            JobName = jobname;
+            Description = describe;
+            TimeStarted = started;
             EmployeeName = employee;
-            iscompleted = false;
+            IsCompleted = false;
         }
     }
 }
