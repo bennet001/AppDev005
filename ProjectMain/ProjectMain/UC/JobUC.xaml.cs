@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectMain.OurUC
+namespace ProjectMain.UC
 {
     /// <summary>
-    /// Interaction logic for JobUserControl1.xaml
+    /// Interaction logic for JobUC.xaml
     /// </summary>
-    public partial class JobUserControl1 : UserControl
+    public partial class JobUC : UserControl
     {
         int _jobid = 0;
         public int JobId { get { return _jobid; } set { _jobid = value; } }
@@ -36,8 +36,7 @@ namespace ProjectMain.OurUC
 
         string _assignedemployee;
         public string AssignedEmployee { get { return _assignedemployee; } set { _assignedemployee = value; } }
-
-        public JobUserControl1()
+        public JobUC()
         {
             InitializeComponent();
         }

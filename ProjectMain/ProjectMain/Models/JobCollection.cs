@@ -9,13 +9,13 @@ namespace ProjectMain
 {
     class JobCollection
     {
-        ObservableCollection<JobTest> jobs = new ObservableCollection<JobTest>();
-        public void ButtonClick_Handler(JobTest addition)
+        ObservableCollection<Job> jobs = new ObservableCollection<Job>();
+        public void ButtonClick_Handler(Job addition)
         {
             _joblist.Add(addition);
         }
 
-        private ObservableCollection<JobTest> _joblist = new ObservableCollection<JobTest>();
-        public ObservableCollection<JobTest> JobList { get { return _joblist; } set { _joblist = value; } }
+        private ObservableCollection<Job> _joblist = new ObservableCollection<Job>();
+        public ObservableCollection<Job> JobList { get { return _joblist; } set { _joblist = value; } }
     }
 }

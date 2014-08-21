@@ -24,5 +24,10 @@ namespace ProjectMain.UC
         {
             InitializeComponent();
         }
+
+        private void isDoneCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

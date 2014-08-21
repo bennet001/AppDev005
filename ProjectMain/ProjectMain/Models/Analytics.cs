@@ -96,7 +96,7 @@ namespace ProjectMain
             return JobCount;
         }
 
-        public int OverDueJobs(List<JobTest> JobList)
+        public int OverDueJobs(List<Job> JobList)
         {
             int OverDue = 0;
             /**Grab all jobs with for loop
@@ -108,7 +108,7 @@ namespace ProjectMain
 
         public int OverDueForOneEmployee(int EmployeeID)
         {
-            List<JobTest> jobs = new List<JobTest>(); 
+            List<Job> jobs = new List<Job>(); 
             /**Grab all jobs with for loop
             if(job has righ employee id)
                 jobs.Add(job)
@@ -118,7 +118,7 @@ namespace ProjectMain
             return overdue;
         }
 
-        public int TotalJobs(List<JobTest> JobList)
+        public int TotalJobs(List<Job> JobList)
         {
             int totalJobs = JobList.Count;
             return totalJobs;

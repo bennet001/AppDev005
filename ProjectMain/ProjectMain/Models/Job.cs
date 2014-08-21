@@ -70,7 +70,7 @@ namespace ProjectMain
             set { totalTime = TimeFinished - TimeStarted; }
         }
 
-        public Job(string jobname, Priority priority, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ")
+        public Job(string jobname, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ", Priority priority = Priority.Green)
         {
             this.jobID = jobID;
             this.commonJobID = commonID;
