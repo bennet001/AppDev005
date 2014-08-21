@@ -8,12 +8,6 @@ namespace ProjectMain
 {
     public class Job
     {
-        public enum Priority
-        {
-            Green,
-            Yellow,
-            Red
-        };
         private readonly int jobID;
         private readonly int commonJobID;
         private string jobName;
