@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectMain.Enum
+using ProjectMain.Enum;
 
 namespace ProjectMain
 {
@@ -71,7 +71,7 @@ namespace ProjectMain
             set { isComplete = value; }
         }
 
-        public Job(string jobname, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ", Priority.Priority priority = Priority.Green)
+        public Job(string jobname, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ", Priority.PriorityLevel priority = Priority.Green)
         {
             this.jobID = jobID;
             this.commonJobID = commonID;
@@ -79,7 +79,7 @@ namespace ProjectMain
             description = describe;
             TimeStarted = timeStart;
             TimeDue = dueDate;
-            Priority.Priority pry = priority;
+            Priority.PriorityLevel pry = priority;
         }
     }
 }

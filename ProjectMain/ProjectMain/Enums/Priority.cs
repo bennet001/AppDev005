@@ -8,7 +8,7 @@ namespace ProjectMain.Enums
 {
     class Priority
     {
-        public enum Priority
+        public enum PriorityLevel
         {
             Green,
             Yellow,
