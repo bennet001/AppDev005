@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectMain.Enum
 
 namespace ProjectMain
 {
@@ -64,7 +65,13 @@ namespace ProjectMain
             set { totalTime = TimeFinished - TimeStarted; }
         }
 
-        public Job(string jobname, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ", Priority priority = Priority.Green)
+        public bool IsComplete
+        {
+            get { return isComplete; }
+            set { isComplete = value; }
+        }
+
+        public Job(string jobname, int jobID, int commonID, DateTime timeStart, DateTime dueDate, string describe = " ", Priority.Priority priority = Priority.Green)
         {
             this.jobID = jobID;
             this.commonJobID = commonID;
@@ -72,7 +79,7 @@ namespace ProjectMain
             description = describe;
             TimeStarted = timeStart;
             TimeDue = dueDate;
-            Priority pry = priority;
+            Priority.Priority pry = priority;
         }
     }
 }
