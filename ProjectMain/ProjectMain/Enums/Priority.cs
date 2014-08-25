@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjectMain.Enums
 {
-    class Priority
-    {
+    
         public enum PriorityLevel
         {
             Green,
             Yellow,
             Red
         };
-    }
+    
 }
