@@ -59,3 +59,5 @@ C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\Pro
 C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\ProjectMain\obj\Debug\ProjectMain.exe
 C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\ProjectMain\obj\Debug\ProjectMain.pdb
 C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\ProjectMain\obj\Debug\ProjectMain.csprojResolveAssemblyReference.cache
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.exe
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.pdb

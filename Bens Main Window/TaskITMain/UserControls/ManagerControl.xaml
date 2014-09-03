@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="TaskITMain.ManagerControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:TaskITMain.UserControls"
+        Height="675" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="IncompleteJobDataGrid"
+                  Grid.Column="0"
+                  ItemsSource="{Binding}"
+                  AutoGeneratingColumn="IncompleteJobDataGrid_AutoGeneratingColumn"/>
+
+        <StackPanel x:Name="JobModifyPanel"
+                    Grid.Column="1">
+            <Button x:Name="CreateJobButton"
+                    Margin="0,20,0,0"
+                    Height="30"
+                    Width="100"
+                    Content="Create Job"
+                    FontSize="15" 
+                    Click="CreateJobButton_Click"/>
+
+            <Button x:Name="DeleteJobButton"
+                    Margin="0,10,0,0"
+                    Height="30"
+                    Width="100"
+                    Content="Delete Job"
+                    FontSize="15"/>
+        </StackPanel>
+        <uc:CreateJob x:Name="jobPopup"/>
+    </Grid>
+</UserControl>
+
+
