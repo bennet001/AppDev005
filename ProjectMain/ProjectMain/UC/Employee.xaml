@@ -90,14 +90,12 @@
 				Content="Finish Task"
 				Click="Finish_Job_Click"
 					Margin="1"/>
-			<Button x:Name="Log_out"
+			
+			
+		</UniformGrid>
+		<Button x:Name="Log_out"
 				Content="Log Out"
 				Click="Log_out_Click"
 					Margin="1"/>
-			<Button x:Name="Exit"
-				Content="Exit"
-				Click="Exit_Click"
-					Margin="1"/>
-		</UniformGrid>
 	</StackPanel>
 </UserControl>
