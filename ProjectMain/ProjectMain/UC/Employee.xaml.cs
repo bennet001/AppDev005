@@ -12,22 +12,121 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjectMain.Models;
+using ProjectMain.Enums;
+using ProjectMain.SaveToDB;
 
 namespace ProjectMain.UC
 {
-    /// <summary>
-    /// Interaction logic for Employee.xaml
-    /// </summary>
-    public partial class Employee : UserControl
-    {
-        public Employee()
-        {
-            InitializeComponent();
-        }
+	/// <summary>
+	/// Interaction logic for Employee.xaml
+	/// </summary>
+	public partial class Employee : UserControl
+	{
+		private Job task { public get; set; }
+		private static DateTime defultDateTime = new DateTime(9999, 12, 31, 12, 59, 59, DateTimeKind.Local);
+		private static DateTime DefultDateTime
+		{
+			get { return defultDateTime; }
+		}
+		private static DateTime _TimeNow = System.DateTime.Now;
+		private static DateTime TimeNow
+		{
+			get { return _TimeNow; }
+			set { _TimeNow = value; }
+		}
+		private bool isStarted = false;
+		private bool IsStarted
+		{
+			get { return isStarted; }
+			set { isStarted = value; }
+		}
 
-        private void isDoneCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
 
-        }
-    }
+
+		public Employee(Job _task)
+		{
+			InitializeComponent();
+
+			task = _task;
+
+			//jobNameLabel = task.JobName;
+			//jobLocationLabel = task.
+			//jobDateLabel = task.TimeDue;
+			//commentsTextBlock = task.Description;
+
+		}
+
+		private void Start_Job_Click(object sender, RoutedEventArgs e)
+		{
+			if (task.TimeDue < TimeNow)
+			{
+				MessageBox.Show("You cannot start this job. It is scheduled to start at " + task.TimeStarted.ToString("T"));
+				if (task.TimeStarted <= TimeNow)
+				{
+					IsStarted = true;
+				}
+			}
+			else if (task.TimeStarted <= DefultDateTime && task.isCompleted == false && IsStarted == false)
+			{
+				task.TimeStarted = TimeNow;
+				MessageBox.Show("The job " + task.JobName + " has been started at " + task.TimeStarted.ToString("T"));
+				SaveThis();
+				IsStarted = true;
+			}
+			else
+			{
+				MessageBox.Show("You cannot start this job again. It has already been started at " + task.TimeStarted.ToString("T"));
+			}
+		}
+
+		private void Finish_Job_Click(object sender, RoutedEventArgs e)
+		{
+			if (task.TimeStarted <= TimeNow && task.TimeStarted != DefultDateTime && task.isCompleted == false && IsStarted == true)
+			{
+				TimeNow = DateTime.Now;
+				task.TimeFinished = TimeNow;
+				task.isCompleted = true;
+				MessageBox.Show("The job " + task.JobName + " has been completed at " + task.TimeFinished.ToString("T"));
+				SaveThis();
+				IsStarted = false;
+				ExitProgram();
+			}
+			else
+			{
+				if (isStarted == false)
+				{
+					MessageBox.Show("The job " + task.JobName + " cannot be completed becasue it hasn't been started yet.");
+				}
+			}
+		}
+
+		private void SaveThis()
+		{
+			//Save this current job. 
+			InAndOut a = new InAndOut();
+			a.SaveJob(task);
+			//MessageBox.Show("The job " + task.JobName + " has been saved.");
+		}
+
+		private void ExitProgram()
+		{
+			//MessageBox.Show("Bye.");
+			this.Exit(1);
+		}
+
+		private void Log_out_Click(object sender, RoutedEventArgs e)
+		{
+			//This needs to open a new instance of the log-in window before complete close, multi-thredding.
+			LogIn newLogIn = new LogIn();
+
+			ExitProgram();
+		}
+
+		private void returnButton_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+	}
 }

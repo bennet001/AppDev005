@@ -19,7 +19,7 @@ namespace ProjectMain
         private DateTime timeFinished;
 		private TimeSpan totalTime;
         private DateTime timeDue;
-        private bool isCompleted { get; set; }
+        public bool isCompleted { get; set; }
 		private PriorityLevel pry;
 
 		public int ID

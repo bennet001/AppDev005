@@ -58,7 +58,9 @@
     <Compile Include="Enums\Priority.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="NullToVisibilityConverter.cs" />
+    <Compile Include="SaveToDB\InAndOut.cs" />
     <Compile Include="SupervisorUI.xaml.cs">
       <DependentUpon>SupervisorUI.xaml</DependentUpon>
     </Compile>
