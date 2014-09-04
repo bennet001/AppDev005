@@ -30,7 +30,7 @@ namespace ProjectMain
         {
             
             InitializeComponent();
-            jobs = JobDB.PopulateDB("../../Jobs");
+        
             IncompleteJobDataGrid.ItemsSource = jobs;
         }
         private void CreateJobButton_Click(object sender, RoutedEventArgs e)
@@ -48,24 +48,7 @@ namespace ProjectMain
             JobUserControlWindow.Show();
         }
 
-        protected void SaveJob(Job entered)
-        {
-            Job mock = entered;
-            jobs.Add(mock);
-            
-            using (sw = new StreamWriter("../../Jobs/Job" + JobDB.Count +".txt", true))
-            {
-                sw.WriteLine(mock.ID);
-                sw.WriteLine(mock.JobName);
-                sw.WriteLine(mock.Description);
-                sw.WriteLine(mock.TimeStarted);
-                //sw.Write(POC + "|");
-                sw.WriteLine(mock.Pry);
-                //sw.Write(IsCompleted + "|");
-                sw.WriteLine();
-            }
-            JobDB.Count++;
-        }
+
 
         private void DeleteJobButton_Click(object sender, RoutedEventArgs e)
         {

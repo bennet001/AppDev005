@@ -49,10 +49,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <None Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    </None>
     <Compile Include="Delegate.cs" />
     <Compile Include="EmployeeDB.cs" />
     <Compile Include="Enums\Priority.cs">
