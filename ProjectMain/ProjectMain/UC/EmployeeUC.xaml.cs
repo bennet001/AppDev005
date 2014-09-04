@@ -23,7 +23,7 @@ namespace ProjectMain.UC
 	/// </summary>
 	public partial class EmployeeUC : UserControl
 	{
-		public Job task { get; private set; }
+		private Job task { public get; set; }
 		private static DateTime defultDateTime = new DateTime(9999, 12, 31, 12, 59, 59, DateTimeKind.Local);
 		private static DateTime DefultDateTime
 		{
@@ -130,4 +130,3 @@ namespace ProjectMain.UC
 
 	}
 }
- 
