@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\ProjectMain\obj\Debug\
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\
 ProjectMain
 none
 false
 DEBUG;TRACE
-C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\ProjectMain\App.xaml
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\App.xaml
 5-41601979
 
-151619260852
+17459516308
 12-1401562060
 MainWindow.xaml;SupervisorUI.xaml;UC\Employee.xaml;UC\JobUC.xaml;UC\LogIn.xaml;
 
-False
+True
 

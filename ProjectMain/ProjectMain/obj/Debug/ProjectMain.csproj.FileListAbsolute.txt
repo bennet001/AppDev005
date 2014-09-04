@@ -61,3 +61,16 @@ C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\Pro
 C:\Users\Benjamin Gonzalez\Documents\Visual Studio 2012\Projects\ProjectMain\ProjectMain\obj\Debug\ProjectMain.csprojResolveAssemblyReference.cache
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.exe
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.pdb
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.csprojResolveAssemblyReference.cache
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\MainWindow.baml
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\Employee.baml
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\LogIn.baml
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\MainWindow.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\SupervisorUI.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\Employee.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\JobUC.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\LogIn.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\App.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain_MarkupCompile.cache
+C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain_MarkupCompile.lref

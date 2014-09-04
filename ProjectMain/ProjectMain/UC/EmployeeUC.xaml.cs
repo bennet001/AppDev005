@@ -21,7 +21,7 @@ namespace ProjectMain.UC
 	/// <summary>
 	/// Interaction logic for Employee.xaml
 	/// </summary>
-	public partial class Employee : UserControl
+	public partial class EmployeeUC : UserControl
 	{
 		private Job task { public get; set; }
 		private static DateTime defultDateTime = new DateTime(9999, 12, 31, 12, 59, 59, DateTimeKind.Local);
@@ -44,7 +44,7 @@ namespace ProjectMain.UC
 
 
 
-		public Employee(Job _task)
+        public EmployeeUC(Job _task)
 		{
 			InitializeComponent();
 

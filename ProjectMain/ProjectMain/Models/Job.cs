@@ -12,15 +12,17 @@ namespace ProjectMain
    public class Job
 	{
 		private int jobID;
-		private readonly int commonJobID = JobDB.Count;
+		private int commonJobID;
 		private string jobName;
 		private string description;
-		private DateTime timeStarted = DateTime.Now;
+		private DateTime timeStarted;
         private DateTime timeFinished;
 		private TimeSpan totalTime;
         private DateTime timeDue;
-        public bool isCompleted { get; set; }
+        private bool isCompleted;
 		private PriorityLevel pry;
+
+
 
 		public int ID
 		{
@@ -31,6 +33,7 @@ namespace ProjectMain
 		public int CommonID
 		{
 			get { return commonJobID; }
+            set { commonJobID = value; }
 		}
 
 		public string JobName
@@ -75,66 +78,26 @@ namespace ProjectMain
 			set { pry = value; }
 		}
 
-		public Job(string jobname = "SomeDefault", int jobID = 12, 
-            int commonID = 3, string describe = " ", 
-            PriorityLevel priority = PriorityLevel.Green)
+        public bool IsCompleted
+        {
+            get { return isCompleted; }
+            set { isCompleted = value;}
+        }
+
+        public Job(int jobID, int commonID, PriorityLevel priority, string describe, bool isCompleted = false, DateTime timeStart = default(DateTime), DateTime TimeDue = default(DateTime))
 		{
-			this.jobID = jobID;
-			this.commonJobID = commonID;
-			this.jobName = jobname;
-			this.description = describe;
-			this.pry = priority;
-            this.isCompleted = false;
+            this.ID = jobID;
+            this.CommonID = commonID;
+            this.JobName = JobName;
+            this.Description = describe;
+            this.TimeStarted = timeStart;
+            this.TimeDue = TimeDue;
+            this.Pry = priority;
+            this.isCompleted = isCompleted;
 		}
         public Job()
         {
         }
 	}
-   public class JobDB
-   {
-       public static ObservableCollection<Job> ourdb;
-       public static int Count { get; set; }
-       /// <summary>
-       /// Will populate a collection upon instantiation
-       /// of Employee objects
-       /// </summary>
-       /// <param name="path"></param>
-       /// <returns></returns>
-       public static ObservableCollection<Job> PopulateDB(string path)
-       {
-           string[] dirs = Directory.GetFiles(path);
-           ourdb = new ObservableCollection<Job>();
-           int standard;
-           DateTime newstandards;
-           foreach (string dir in dirs)
-           {
-               string[] newdirs = File.ReadAllLines(dir);
-               Console.WriteLine(newdirs[0] + " This is a file Maybe?");
-               //FileStream check;
-               
-               if (int.TryParse(newdirs[0], out standard) && DateTime.TryParse(newdirs[3], out newstandards))
-               {
-                   ourdb.Add(new Job
-                   {
-                       ID = int.Parse(newdirs[0]),
-                       JobName = newdirs[1],
-                       Description = newdirs[2],
-                       TimeStarted = DateTime.Parse(newdirs[3]),
-                       TimeFinished = DateTime.Now,
-                       
-                       Pry = ParseEnum(newdirs[4])
-                   });
-                   Count++;
-               }
-               
-               Console.Write(dir + " ");
-           }
-           return ourdb;
-       }
-
-       private static PriorityLevel ParseEnum(string p)
-       {
-           return (PriorityLevel)Enum.Parse(typeof(PriorityLevel), p, true);
-       }
-   }
+  
 }

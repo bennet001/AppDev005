@@ -30,5 +30,7 @@ namespace ProjectMain
             SupervisorUI maker = new SupervisorUI();
             maker.Show();
         }
+
+
     }
 }
