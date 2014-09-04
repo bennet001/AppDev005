@@ -74,5 +74,10 @@ C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain_MarkupCompile.cache
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain_MarkupCompile.lref
+<<<<<<< HEAD
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\EmployeeUC.baml
 C:\Users\Benjamin Lofgreen\Documents\AppDev005\ProjectMain\ProjectMain\obj\Debug\UC\EmployeeUC.g.cs
+=======
+C:\Users\Josh Demille_2\Desktop\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.exe
+C:\Users\Josh Demille_2\Desktop\AppDev005\ProjectMain\ProjectMain\obj\Debug\ProjectMain.pdb
+>>>>>>> 52ba5dc73383de20e1b355fbbb130a53668773c3

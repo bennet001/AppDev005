@@ -37,7 +37,11 @@ namespace ProjectMain
         {
              JobUserControlWindow = new Window();
             JobUC popupJobUC = new JobUC();
+
+
             popupJobUC.JobDel += SaveJob;
+
+
             JobUserControlWindow.Height = 300;
             JobUserControlWindow.Width = 300;
             JobUserControlWindow.MinHeight = 250;
