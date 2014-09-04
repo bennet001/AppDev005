@@ -14,7 +14,7 @@ namespace ProjectMain.SaveToDB
 		public void SaveJob(Job J, string SQLPath = "Data Source=IT-OJCFCBE76QAN;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False")
 		{
 			int IsCompleted = 0;
-			if (J.IsCompleted)
+			if (J.isCompleted)
 			{
 				IsCompleted = 1;
 			}
