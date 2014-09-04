@@ -58,14 +58,15 @@
     <Compile Include="Enums\Priority.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MainController.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="NullToVisibilityConverter.cs" />
     <Compile Include="SaveToDB\InAndOut.cs" />
     <Compile Include="SupervisorUI.xaml.cs">
       <DependentUpon>SupervisorUI.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC\Employee.xaml.cs">
-      <DependentUpon>Employee.xaml</DependentUpon>
+    <Compile Include="UC\EmployeeUC.xaml.cs">
+      <DependentUpon>EmployeeUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC\JobUC.xaml.cs">
       <DependentUpon>JobUC.xaml</DependentUpon>
@@ -91,7 +92,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC\Employee.xaml">
+    <Page Include="UC\EmployeeUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

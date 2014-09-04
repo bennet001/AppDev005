@@ -30,7 +30,7 @@ namespace ProjectMain
             c.localEmployeeCollection = c.io.GetEmployees(c.SQLPath, "use AppDevLab; Select * from Employee;");
 
             c.StartLogin();
-            c.StartTest();
+            
 
 
         }
@@ -42,9 +42,6 @@ namespace ProjectMain
             mainWindow.CurrentView.Children.Add(new LogIn(localEmployeeCollection));
         }
 
-        public void StartTest()
-        { 
-        
-        }
+
     }
 }

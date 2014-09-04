@@ -23,7 +23,7 @@ namespace ProjectMain.UC
 	/// </summary>
 	public partial class EmployeeUC : UserControl
 	{
-		private Job task { public get; set; }
+		public Job task { get; private set; }
 		private static DateTime defultDateTime = new DateTime(9999, 12, 31, 12, 59, 59, DateTimeKind.Local);
 		private static DateTime DefultDateTime
 		{
@@ -67,7 +67,7 @@ namespace ProjectMain.UC
 					IsStarted = true;
 				}
 			}
-			else if (task.TimeStarted <= DefultDateTime && task.isCompleted == false && IsStarted == false)
+			else if (task.TimeStarted <= DefultDateTime && task.IsCompleted == false && IsStarted == false)
 			{
 				task.TimeStarted = TimeNow;
 				MessageBox.Show("The job " + task.JobName + " has been started at " + task.TimeStarted.ToString("T"));
@@ -82,11 +82,11 @@ namespace ProjectMain.UC
 
 		private void Finish_Job_Click(object sender, RoutedEventArgs e)
 		{
-			if (task.TimeStarted <= TimeNow && task.TimeStarted != DefultDateTime && task.isCompleted == false && IsStarted == true)
+			if (task.TimeStarted <= TimeNow && task.TimeStarted != DefultDateTime && task.IsCompleted == false && IsStarted == true)
 			{
 				TimeNow = DateTime.Now;
 				task.TimeFinished = TimeNow;
-				task.isCompleted = true;
+				task.IsCompleted = true;
 				MessageBox.Show("The job " + task.JobName + " has been completed at " + task.TimeFinished.ToString("T"));
 				SaveThis();
 				IsStarted = false;
@@ -118,7 +118,7 @@ namespace ProjectMain.UC
 		private void Log_out_Click(object sender, RoutedEventArgs e)
 		{
 			//This needs to open a new instance of the log-in window before complete close, multi-thredding.
-			LogIn newLogIn = new LogIn();
+	
 
 			ExitProgram();
 		}
