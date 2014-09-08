@@ -41,7 +41,7 @@ namespace ProjectMain.UC
 			get { return isStarted; }
 			set { isStarted = value; }
 		}
-
+		Window JobUserControl1;
 
 
         public EmployeeUC(Job _task)
@@ -112,20 +112,22 @@ namespace ProjectMain.UC
 		private void ExitProgram()
 		{
 			//MessageBox.Show("Bye.");
-			this.Exit(1);
+			//this.Exit(1);
+			//System.Environment.Exit(0);
+			WindowCloseBehaviour.SetClose(this, true);
 		}
 
 		private void Log_out_Click(object sender, RoutedEventArgs e)
 		{
 			//This needs to open a new instance of the log-in window before complete close, multi-thredding.
 	
-
 			ExitProgram();
 		}
 
 		private void returnButton_Click(object sender, RoutedEventArgs e)
 		{
-
+			JobUserControl1 = new Window();
+			ExitProgram();
 		}
 
 	}
