@@ -9,6 +9,7 @@ using ProjectMain.UC;
 
 namespace ProjectMain
 {
+    
     public class MainController
     {
         public  List<Job> localJobCollection;
@@ -18,20 +19,24 @@ namespace ProjectMain
 
         public string SQLPath;
 
+        [STAThread]
         public static void Main(String[] args)
         {
             MainController c = new MainController();
-           
+
+            c.SQLPath = "Data Source=IT-OJCFCBE76QAN;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+
             c.io = new InAndOut();
 
 
             c.mainWindow = new MainWindow();
 
-            c.localEmployeeCollection = c.io.GetEmployees(c.SQLPath, "use AppDevLab; Select * from Employee;");
+            
+            c.localEmployeeCollection = c.io.GetEmployees( "use AppDevLab; Select * from Employee;", c.SQLPath);
 
             c.StartLogin();
-            
 
+            
 
         }
 

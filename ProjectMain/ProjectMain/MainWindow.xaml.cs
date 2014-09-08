@@ -23,6 +23,7 @@ namespace ProjectMain
         public MainWindow()
         {
             InitializeComponent();
+            this.Show();
         }
 
         private void NewSupervisor_Click(object sender, RoutedEventArgs e)

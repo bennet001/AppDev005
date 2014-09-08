@@ -68,7 +68,7 @@
                       VerticalAlignment="Center"
                       HorizontalAlignment="Right"
                       Margin="20"
-                      Checked="isDoneCheckBox_Checked" />
+                      />
 
 			<Label x:Name="isDoneLabel"
                    Content="Job Completed: "

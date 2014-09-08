@@ -221,6 +221,28 @@ namespace ProjectMain.SaveToDB
 				return ReturnEmployees;
 			}
 		}
-	}
+	
+        public void AddEmployeesToJob(Job job, Employee[] employees, string SQLPath = "Data Source=IT-OJCFCBE76QAN;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False")
+        {
+            SqlConnection cnn;
+            string connectionString = SQLPath;
+            cnn = new SqlConnection(connectionString);
+            SqlCommand cmd = null;
+            // SQL Command Here
+            
+            cnn.Open();
+            for (int i = 0; i < employees.Length; i++)
+            {
+                string sql = "use AppDevLab; Insert into EmployeeJob Values(" + employees[i].EmployeeID + ", " + job.ID + ");";
+
+                cmd = new SqlCommand(sql, cnn);
+                // ExecuteNonQuery does Data Definition, inserting and updating data
+                cmd.ExecuteNonQuery();
+            }
+       
+            cmd.Dispose();
+            cnn.Close();
+        }
+    }
 }
 
