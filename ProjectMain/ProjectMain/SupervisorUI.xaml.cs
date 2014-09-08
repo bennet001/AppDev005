@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ProjectMain.UC;
+using ProjectMain.SaveToDB;
 
 namespace ProjectMain
 {
@@ -39,8 +40,14 @@ namespace ProjectMain
             JobUC popupJobUC = new JobUC();
 
 
-            popupJobUC.JobDel += SaveJob;
+            //popupJobUC.JobDel += SaveJob;
 
+			InAndOut a = new InAndOut();
+			
+				for (int i = 0; i < jobs.Count(); i++)
+				{
+					a.SaveJob(jobs[i]);
+				}
 
             JobUserControlWindow.Height = 300;
             JobUserControlWindow.Width = 300;
