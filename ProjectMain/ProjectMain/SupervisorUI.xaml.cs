@@ -91,5 +91,10 @@ namespace ProjectMain
          
         }
 
+        private void ShowChart_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
