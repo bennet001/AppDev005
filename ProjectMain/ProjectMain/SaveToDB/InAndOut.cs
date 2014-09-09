@@ -142,10 +142,29 @@ namespace ProjectMain.SaveToDB
             string connectionString = SQLPath;
             cnn = new SqlConnection(connectionString);
             SqlCommand cmd;
+            string sql;
             // SQL Command Here
-            string sql = "use AppDevLab; Insert into Job Values(" + J.ID + ", " + J.CommonID + ", '" + J.JobName + ", '" + J.Pry + "', '" + J.TimeStarted + "', " + J.TimeDue + "', " + J.Description + "', " + IsCompleted + "');";
-            cnn.Open();
+            if(J.TimeFinished == null)
+            {
+                sql = "use AppDevLab; Insert into Job Values(" + J.ID + ", " + J.CommonID + ", '" + J.JobName + "', '" + J.Pry + "', '" + J.TimeStarted + "', NULL, '" + J.TimeDue + "', '" + J.Description + "', " + IsCompleted + ");";
 
+
+                sql = "use AppDevLab; IF EXISTS (SELECT * FROM Job WHERE JobID=" + J.ID + ") UPDATE Job SET JobID=" + J.ID + ", CommonJobID=" + J.CommonID + ", JobName='" + J.JobName + "', JobPriority='" + J.Pry +
+                "', TimeStarted='" + J.TimeStarted + "', TimeFinished=NULL, TimeDue='" +J.TimeDue +"', Description='"+J.Description+"', Is_Completed="+Convert.ToInt32(J.IsCompleted)+" WHERE JobID='"+ J.ID +"' ELSE INSERT INTO Job VALUES ("
+                + J.ID + ", " + J.CommonID + ", '" + J.JobName + "', '" + J.Pry + "', '" + J.TimeStarted + "', NULL, '" + J.TimeDue + "', '" + J.Description + "', " + IsCompleted + ");";
+            }
+            else
+            {
+                sql = "use AppDevLab; Insert into Job Values(" + J.ID + ", " + J.CommonID + ", '" + J.JobName + "', '" + J.Pry + "', '" + J.TimeStarted + "', '" + J.TimeFinished + "', '" + J.TimeDue + "', '" + J.Description + "', " + IsCompleted + ");";
+
+                sql = "use AppDevLab; IF EXISTS (SELECT * FROM Job WHERE JobID=" + J.ID + ") UPDATE Job SET JobID=" + J.ID + ", CommonJobID=" + J.CommonID + ", JobName='" + J.JobName + "', JobPriority='" + J.Pry +
+                 "', TimeStarted='" + J.TimeStarted + "', TimeFinished='"+J.TimeFinished+"', TimeDue='" + J.TimeDue + "', Description='" + J.Description + "', Is_Completed=" + Convert.ToInt32(J.IsCompleted) + " WHERE JobID='" + J.ID + "' ELSE INSERT INTO Job VALUES ("
+                 + J.ID + ", " + J.CommonID + ", '" + J.JobName + "', '" + J.Pry + "', '" + J.TimeStarted + "', NULL, '" + J.TimeDue + "', '" + J.Description + "', " + IsCompleted + ");";
+       
+            
+            }
+
+            cnn.Open();
 
             cmd = new SqlCommand(sql, cnn);
             // ExecuteNonQuery does Data Definition, inserting and updating data

@@ -37,7 +37,7 @@ namespace ProjectMain
         private void CreateJobButton_Click(object sender, RoutedEventArgs e)
         {
              JobUserControlWindow = new Window();
-            JobUC popupJobUC = new JobUC();
+            CreateJobUC popupJobUC = new CreateJobUC();
 
 
             //popupJobUC.JobDel += SaveJob;

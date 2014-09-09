@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,116 +12,124 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjectMain.Models;
 using ProjectMain.Enums;
+using ProjectMain.SaveToDB;
 
 namespace ProjectMain.UC
 {
-    /// <summary>
-    /// Interaction logic for JobUC.xaml
-    /// </summary>
-    public partial class JobUC : UserControl
-    {
-        public event AddDelegate JobDel;
+	/// <summary>
+	/// Interaction logic for Employee.xaml
+	/// </summary>
+	public partial class JobUC : UserControl
+	{
+		public Job task { get; private set; }
+		private static DateTime defultDateTime = new DateTime(9999, 12, 31, 12, 59, 59, DateTimeKind.Local);
+		private static DateTime DefultDateTime
+		{
+			get { return defultDateTime; }
+		}
+		private static DateTime _TimeNow = System.DateTime.Now;
+		private static DateTime TimeNow
+		{
+			get { return _TimeNow; }
+			set { _TimeNow = value; }
+		}
+		private bool isStarted = false;
+		private bool IsStarted
+		{
+			get { return isStarted; }
+			set { isStarted = value; }
+		}
+		Window JobUserControl1;
 
-        public int JobId { get; set; }
 
-        public string JobTitle { get; set; }
+        public JobUC(Job _task)
+		{
+			InitializeComponent();
 
-        public string JobDescription { get; set; }
+			task = _task;
 
-        public string POC { get; set; }
+			jobNameLabel.Content = task.JobName;
+			jobDateLabel.Content = task.TimeDue;
+			jobPriorityLabel.Content = task.Pry;
+			//jobIsDoneLabel.Content = task.IsCompleted;
+			jobDescriptionLabel.Content = task.Description;
 
-        static DateTime _time = DateTime.Now;
-        public static DateTime Time { get { return _time; } set { } }
+		}
 
-        public Job Make;
+		private void Start_Job_Click(object sender, RoutedEventArgs e)
+		{
+			if (task.TimeDue < TimeNow)
+			{
+				MessageBox.Show("You cannot start this job. It is scheduled to start at " + task.TimeStarted.ToString("T"));
+				if (task.TimeStarted <= TimeNow)
+				{
+					IsStarted = true;
+				}
+			}
+			else if (task.TimeStarted <= DefultDateTime && task.IsCompleted == false && IsStarted == false)
+			{
+				task.TimeStarted = TimeNow;
+				MessageBox.Show("The job " + task.JobName + " has been started at " + task.TimeStarted.ToString("T"));
+				SaveThis();
+				IsStarted = true;
+			}
+			else
+			{
+				MessageBox.Show("You cannot start this job again. It has already been started at " + task.TimeStarted.ToString("T"));
+			}
+		}
 
-        public ObservableCollection<Employees> AssignedEmployee = 
-            new ObservableCollection<Employees>();
+		private void Finish_Job_Click(object sender, RoutedEventArgs e)
+		{
+			if (task.TimeStarted <= TimeNow && task.TimeStarted != DefultDateTime && task.IsCompleted == false && IsStarted == true)
+			{
+				TimeNow = DateTime.Now;
+				task.TimeFinished = TimeNow;
+				task.IsCompleted = true;
+				MessageBox.Show("The job " + task.JobName + " has been completed at " + task.TimeFinished.ToString("T"));
+				SaveThis();
+				IsStarted = false;
+				ExitProgram();
+			}
+			else
+			{
+				if (isStarted == false)
+				{
+					MessageBox.Show("The job " + task.JobName + " cannot be completed becasue it hasn't been started yet.");
+				}
+			}
+		}
 
-        public ObservableCollection<Employees> EmployeeList = 
-            EmployeeDB.PopulateDB("../../Employeelist");
+		private void SaveThis()
+		{
+			//Save this current job. 
+			InAndOut a = new InAndOut();
+			a.SaveJob(task);
+			//MessageBox.Show("The job " + task.JobName + " has been saved.");
+		}
 
-        public PriorityLevel pry { get; set; }
-        
-        public JobUC()
-        {
-            this.DataContext = this;
-            InitializeComponent();
-            JobDescJobEmployee.ItemsSource = EmployeeList;
-            AssignedEmployees.ItemsSource = AssignedEmployee;
-        }
+		private void ExitProgram()
+		{
+			//MessageBox.Show("Bye.");
+			//this.Exit(1);
+			//System.Environment.Exit(0);
+			WindowCloseBehaviour.SetClose(this, true);
+		}
 
-        /// <summary>
-        /// Add Job Click is a listener for when the button is clicked in the XAML
-        /// This will create a new job item and add it to a list that already exist
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddJob_Click(object sender, RoutedEventArgs e)
-        {
-            Make = new Job
-            {
-                Description = JobDescription, JobName = JobTitle,
-                ID = JobId, Pry = (PriorityLevel) JobDescPriority.SelectedItem, 
-                TimeStarted = Time };
-            JobDel.Invoke(Make);
-            MessageBox.Show(JobTitle);
-            WindowCloseBehaviour.SetClose(this, true);
-        }
+		private void Log_out_Click(object sender, RoutedEventArgs e)
+		{
+			//This needs to open a new instance of the log-in window before complete close, multi-thredding.
+	
+			ExitProgram();
+		}
 
-        //private void pointOfContactTextBox_TextChanged_1(object sender,
-        //TextChangedEventArgs e)
-        //{
-        //    POC = (TextBox)sender.Text;
-        //}
+		private void returnButton_Click(object sender, RoutedEventArgs e)
+		{
+			JobUserControl1 = new Window();
+			ExitProgram();
+		}
 
-        private void AddEmployee_Click(object sender, RoutedEventArgs e)
-        {
-            Employees created = (Employees)JobDescJobEmployee.SelectedItem;
-            AssignedEmployee.Add((Employees)JobDescJobEmployee.SelectedItem);
-        }
-
-        private void AssignedEmployees_MouseRightButtonUp(object sender, 
-            MouseButtonEventArgs e)
-        {
-            AssignedEmployee.RemoveAt(AssignedEmployees.SelectedIndex);
-        }
-    }
-
-    /// <summary>
-    /// Class that handles the closing of specific windows without intturpting the other windows.
-    /// </summary>
-    public static class WindowCloseBehaviour
-    {
-        public static void SetClose(DependencyObject target, bool value)
-        {
-            target.SetValue(CloseProperty, value);
-        }
-        public static readonly DependencyProperty CloseProperty =
-        DependencyProperty.RegisterAttached(
-        "Close",
-        typeof(bool),
-        typeof(WindowCloseBehaviour),
-        new UIPropertyMetadata(false, OnClose));
-        private static void OnClose(DependencyObject sender, 
-            DependencyPropertyChangedEventArgs e)
-        {
-            if (e.NewValue is bool && ((bool)e.NewValue))
-            {
-                Window window = GetWindow(sender);
-                if (window != null)
-                    window.Close();
-            }
-        }
-        private static Window GetWindow(DependencyObject sender)
-        {
-            Window window = null;
-            if (sender is Window)
-                window = (Window)sender;
-            if (window == null)
-                window = Window.GetWindow(sender);
-            return window;
-        }
-    }
+	}
 }

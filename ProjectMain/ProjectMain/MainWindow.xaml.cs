@@ -70,7 +70,7 @@ namespace ProjectMain
         {
             CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
           
-            CurrentView.Children.Add(new EmployeeUC(  io.GetJobByID(1)   ));
+            CurrentView.Children.Add(new JobUC(  io.GetJobByID(1)   ));
         }
 
 
