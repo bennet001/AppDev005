@@ -8,7 +8,7 @@
 	<StackPanel>
 		<Grid>
 			<Button x:Name="returnButton"
-                    Content="Return to all tasks"
+                    Content="Return To All Tasks"
                     Height="50"
                     VerticalAlignment="Top"
                     Margin="10"
@@ -18,34 +18,31 @@
                    Content="Task Name: "
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="10,60" />
+                   Margin="10,75" />
 
 			<Label x:Name="jobNameLabel"
-                   Content="{Binding Path=jobNameLabel}"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Right"
-                   Margin="10,60"/>
+                   Margin="10,75"/>
 
-			<Label x:Name="locationLabel"
+			<!--<Label x:Name="locationLabel"
                    Content="Location: "
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
                    Margin="10,75"/>
 
 			<Label x:Name="jobLocationLabel"
-                   Content="{Binding Path=jobLocationLabel }"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Right"
-                   Margin="10,75"/>
+                   Margin="10,75"/> -->
 
 			<Label x:Name="dateLabel"
-                   Content="Date Given: "
+                   Content="Due Date: "
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
                    Margin="10,90"/>
 
 			<Label x:Name="jobDateLabel"
-                   Content="10/7/14"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Right"
                    Margin="10,90"/>
@@ -55,47 +52,58 @@
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
                    Margin="10,105"/>
+			
+			<Label x:Name="jobPriorityLabel"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Right"
+                   Margin="10,105"/>
 
-			<Rectangle x:Name="priorityRectangle"
+			<!--<Rectangle x:Name="priorityRectangle"
                        Height="15"
                        Width="15"
                        Fill="Red"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Right"
-                       Margin="10,118"/>
+                       Margin="10,118"/>-->
 
-			<CheckBox x:Name="isDoneCheckBox"
+			<!--<CheckBox x:Name="isDoneCheckBox"
                       VerticalAlignment="Center"
                       HorizontalAlignment="Right"
                       Margin="20"
-                      />
+                      />-->
 
-			<Label x:Name="isDoneLabel"
+			<!--<Label x:Name="isDoneLabel"
                    Content="Job Completed: "
-                   VerticalAlignment="Center"/>
+                   HorizontalAlignment="Left"
+				   Margin="10,120"/>
+			
+			<Label x:Name="jobIsDoneLabel"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Right"
+                   Margin="10,120"/>-->
 
-			<TextBlock x:Name="commentsTextBlock"
-                     VerticalAlignment="Bottom"
+			<Label x:Name="jobDescriptionLabel"
+                     VerticalAlignment="Top"
                      Height="100"
-                     Margin="10,250,10,10"
-                     DataContext="jobs"
-                     Text="{Binding Path=description}" />
+                     Margin="10,130,10,10"/>
 		</Grid>
 		<UniformGrid Columns="2">
 			<Button x:Name="Start_Job"
 				Content="Start Task"
 				Click="Start_Job_Click"
-					Margin="1"/>
+					Margin="5"
+					Height="30"/>
 			<Button x:Name="Finish_Job"
 				Content="Finish Task"
 				Click="Finish_Job_Click"
-					Margin="1"/>
+					Margin="5"
+					Height="30"/>
 			
 			
 		</UniformGrid>
-		<Button x:Name="Log_out"
+		<!--<Button x:Name="Log_out"
 				Content="Log Out"
 				Click="Log_out_Click"
-					Margin="1"/>
+					Margin="1"/>-->
 	</StackPanel>
 </UserControl>

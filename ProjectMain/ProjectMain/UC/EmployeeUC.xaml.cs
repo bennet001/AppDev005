@@ -50,10 +50,11 @@ namespace ProjectMain.UC
 
 			task = _task;
 
-			//jobNameLabel = task.JobName;
-			//jobLocationLabel = task.
-			//jobDateLabel = task.TimeDue;
-			//commentsTextBlock = task.Description;
+			jobNameLabel.Content = task.JobName;
+			jobDateLabel.Content = task.TimeDue;
+			jobPriorityLabel.Content = task.Pry;
+			//jobIsDoneLabel.Content = task.IsCompleted;
+			jobDescriptionLabel.Content = task.Description;
 
 		}
 
