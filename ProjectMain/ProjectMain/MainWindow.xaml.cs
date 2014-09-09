@@ -51,8 +51,11 @@ namespace ProjectMain
       
         public void StartLogin()
         {
+            LogIn currentLogin = new LogIn(localEmployeeCollection);
+            currentLogin.LoginEmployee += LoginEmployee;
+            currentLogin.LoginManager += LoginManager;
             CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
-            CurrentView.Children.Add(new LogIn(localEmployeeCollection));
+            CurrentView.Children.Add(currentLogin);
         }
 
 
@@ -63,6 +66,19 @@ namespace ProjectMain
             CurrentView.Children.Add(maker);
         }
 
+        public void LoginEmployee(Object o, EventArgs e)
+        {
+            CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
+          
+            CurrentView.Children.Add(new EmployeeUC(  io.GetJobByID(1)   ));
+        }
+
+
+        public void LoginManager(Object o, EventArgs e)
+        {
+            CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
+            CurrentView.Children.Add(new SupervisorUI());
+        }
 
     }
 }

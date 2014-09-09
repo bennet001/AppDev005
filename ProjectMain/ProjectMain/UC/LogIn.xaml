@@ -41,7 +41,9 @@
                  Width="100"
                  VerticalAlignment="Bottom"
                  HorizontalAlignment="Right"
-                 Margin="20"/>
+                 Margin="20"
+                 Click="loginButton_Click_1"
+                            />
 
                     <Button x:Name="exitButton"
                  Content="Cancel"
@@ -49,7 +51,9 @@
                  Width="100"
                  VerticalAlignment="Bottom"
                  HorizontalAlignment="Left"
-                 Margin="20"/>
+                 Margin="20"
+                 Click="exitButton_Click_1"
+                            />
 
                 </Grid>
             </StackPanel>
