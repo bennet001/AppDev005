@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using ProjectMain.UC;
 using ProjectMain.SaveToDB;
 using ProjectMain.Models;
+using ProjectMain.EventHandlers;
 
 namespace ProjectMain
 {
@@ -28,7 +29,10 @@ namespace ProjectMain
         ObservableCollection<Employee> employees;
         StreamWriter sw;
         Window JobUserControlWindow;
-  
+
+        public event EventHandler<CreateJobEvent> CreateJobEventHandler;
+
+
         public SupervisorUI(List<Job> tempJobList, List<Employee> tempEmployeeList)
         {
             jobs = new ObservableCollection<Job>();
@@ -52,11 +56,11 @@ namespace ProjectMain
         }
         private void CreateJobButton_Click(object sender, RoutedEventArgs e)
         {
-             JobUserControlWindow = new Window();
+            JobUserControlWindow = new Window();
             CreateJobUC popupJobUC = new CreateJobUC(employees);
 
-
-            //popupJobUC.JobDel += SaveJob;
+            popupJobUC.CreateJobHandler += CreateJobEventFired;
+            
 
 
 
@@ -78,5 +82,14 @@ namespace ProjectMain
         {
 
         }
+
+        public void CreateJobEventFired(Object o, CreateJobEvent e)
+        {
+            jobs.Add(e.job);
+            
+            CreateJobEventHandler(this, e);
+         
+        }
+
     }
 }

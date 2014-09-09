@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjectMain.Enums;
+using ProjectMain.EventHandlers;
 using ProjectMain.Models;
 
 namespace ProjectMain.UC
@@ -23,8 +24,7 @@ namespace ProjectMain.UC
     /// </summary>
     public partial class CreateJobUC : UserControl
     {
-        public event JobDel;
-
+        
         public int JobId { get; set; }
 
         public string JobTitle { get; set; }
@@ -38,7 +38,7 @@ namespace ProjectMain.UC
 
         public Job Make;
         
-        public event EventHandler LoginEmployee;
+        public event EventHandler<CreateJobEvent> CreateJobHandler;
 
 
         public ObservableCollection<Employee> AssignedEmployee = 
@@ -74,7 +74,10 @@ namespace ProjectMain.UC
                 TimeStarted = Time };
 
             //!! INVOKE THE CREATE JOB AND CREATE EMPLOYEEJOB FOR DB HERE !!//
-            
+            if (this.CreateJobHandler != null)
+            {
+                this.CreateJobHandler(this, new CreateJobEvent(Make, AssignedEmployee.ToArray()));
+            }
             //!! INVOKE THE CREATE JOB AND CREATE EMPLOYEEJOB FOR DB HERE !!//
             MessageBox.Show(JobTitle);
             WindowCloseBehaviour.SetClose(this, true);

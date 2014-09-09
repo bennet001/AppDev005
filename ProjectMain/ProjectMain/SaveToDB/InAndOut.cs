@@ -252,7 +252,7 @@ namespace ProjectMain.SaveToDB
             cnn.Open();
             for (int i = 0; i < employees.Length; i++)
             {
-                string sql = "use AppDevLab; Insert into EmployeeJob Values(" + employees[i].EmployeeID + ", " + job.ID + ");";
+                string sql = "use AppDevLab; Insert into EmployeeJob Values(" + (currentLastEmployeeJobID(SQLPath) + 1) + ", " + job.ID + ", " + employees[i].EmployeeID + ");";
 
                 cmd = new SqlCommand(sql, cnn);
                 // ExecuteNonQuery does Data Definition, inserting and updating data
@@ -261,6 +261,36 @@ namespace ProjectMain.SaveToDB
        
             cmd.Dispose();
             cnn.Close();
+        }
+
+        public int currentLastEmployeeJobID(string SQLPath)
+        {
+            int returnInt = 0;
+            using (SqlConnection connection =
+                           new SqlConnection(SQLPath))
+            {
+                SqlCommand command =
+                    new SqlCommand("Use AppDevLab; Select count(*) from EmployeeJob;", connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+       
+
+                // Call Read before accessing data. 
+                while (reader.Read())
+                {
+
+                    returnInt = (int)reader[0];
+
+
+                }
+
+                reader.Close();
+                if (returnInt == -1)
+                {
+                    returnInt = 0;
+                }
+                return returnInt;
+            }
         }
     }
 }
