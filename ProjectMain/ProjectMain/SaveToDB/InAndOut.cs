@@ -110,7 +110,7 @@ namespace ProjectMain.SaveToDB
                             TimeFinished = DateTime.MaxValue;
                         }
 
-                        ReturnJob = new Job(JobID, JobCommonID, JobPriority, Description, IsCompleted, TimeStarted, TimeDue, JobName);
+                        ReturnJob = new Job(JobID, JobCommonID, JobPriority, Description, IsCompleted, TimeStarted, TimeDue);
                         ReturnJob.TimeFinished = TimeFinished;
                         ReturnJobs.Add(ReturnJob);
                     }
