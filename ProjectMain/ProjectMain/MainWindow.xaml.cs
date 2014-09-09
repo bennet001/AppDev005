@@ -43,7 +43,7 @@ namespace ProjectMain
             io = new InAndOut();
 
             localEmployeeCollection = io.GetEmployees("use AppDevLab; Select * from Employee;", SQLPath);
-
+            localJobCollection = io.GetJobs("use AppDevLab; Select * from Job;", SQLPath);
             StartLogin();
 
 
@@ -58,14 +58,6 @@ namespace ProjectMain
             CurrentView.Children.Add(currentLogin);
         }
 
-
-        private void NewSupervisor_Click(object sender, RoutedEventArgs e)
-        {
-            SupervisorUI maker = new SupervisorUI();
-            CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
-            CurrentView.Children.Add(maker);
-        }
-
         public void LoginEmployee(Object o, EventArgs e)
         {
             CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
@@ -76,8 +68,10 @@ namespace ProjectMain
 
         public void LoginManager(Object o, EventArgs e)
         {
+            
+            SupervisorUI maker = new SupervisorUI(localJobCollection);
             CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
-            CurrentView.Children.Add(new SupervisorUI());
+            CurrentView.Children.Add(maker);
         }
 
     }

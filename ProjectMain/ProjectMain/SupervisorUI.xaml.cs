@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ProjectMain.UC;
 using ProjectMain.SaveToDB;
+using ProjectMain.Models;
 
 namespace ProjectMain
 {
@@ -24,12 +25,27 @@ namespace ProjectMain
     public partial class SupervisorUI : UserControl
     {
         ObservableCollection<Job> jobs;
+        ObservableCollection<Employee> employees;
         StreamWriter sw;
         Window JobUserControlWindow;
- 
-        public SupervisorUI()
+  
+        public SupervisorUI(List<Job> tempJobList, List<Employee> tempEmployeeList)
         {
-            
+            jobs = new ObservableCollection<Job>();
+            for (int i = 0; i < tempJobList.Count(); i++)
+            {
+
+                jobs.Add(tempJobList[i]);
+            }
+          
+            employees = new ObservableCollection<Employee>();
+            for (int i = 0; i < tempEmployeeList.Count(); i++)
+            {
+
+                employees.Add(tempEmployeeList[i]);
+            }
+
+
             InitializeComponent();
         
             IncompleteJobDataGrid.ItemsSource = jobs;
@@ -37,17 +53,14 @@ namespace ProjectMain
         private void CreateJobButton_Click(object sender, RoutedEventArgs e)
         {
              JobUserControlWindow = new Window();
-            CreateJobUC popupJobUC = new CreateJobUC();
+            CreateJobUC popupJobUC = new CreateJobUC(employees);
 
 
             //popupJobUC.JobDel += SaveJob;
 
-			InAndOut a = new InAndOut();
-			
-				for (int i = 0; i < jobs.Count(); i++)
-				{
-					a.SaveJob(jobs[i]);
-				}
+
+
+	
 
             JobUserControlWindow.Height = 300;
             JobUserControlWindow.Width = 300;

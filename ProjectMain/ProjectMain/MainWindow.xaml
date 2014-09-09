@@ -4,10 +4,5 @@
         
         Title="MainWindow" Height="350" Width="525">
     <Grid x:Name="CurrentView">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="NewSupervisor" Content="New Supervisor UI" Click="NewSupervisor_Click"></Button>
-    </Grid>
+  </Grid>
 </Window>

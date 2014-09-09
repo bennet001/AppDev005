@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjectMain.Enums;
+using ProjectMain.Models;
 
 namespace ProjectMain.UC
 {
@@ -22,7 +23,7 @@ namespace ProjectMain.UC
     /// </summary>
     public partial class CreateJobUC : UserControl
     {
-        public event AddDelegate JobDel;
+        public event JobDel;
 
         public int JobId { get; set; }
 
@@ -36,19 +37,24 @@ namespace ProjectMain.UC
         public static DateTime Time { get { return _time; } set { } }
 
         public Job Make;
+        
+        public event EventHandler LoginEmployee;
 
-        public ObservableCollection<Employees> AssignedEmployee = 
-            new ObservableCollection<Employees>();
 
-        public ObservableCollection<Employees> EmployeeList = 
-            EmployeeDB.PopulateDB("../../Employeelist");
+        public ObservableCollection<Employee> AssignedEmployee = 
+            new ObservableCollection<Employee>();
+
+        public ObservableCollection<Employee> EmployeeList;
 
         public PriorityLevel pry { get; set; }
         
-        public CreateJobUC()
+        public CreateJobUC(ObservableCollection<Employee> tempEmployees)
         {
             this.DataContext = this;
             InitializeComponent();
+
+            EmployeeList = tempEmployees;
+
             JobDescJobEmployee.ItemsSource = EmployeeList;
             AssignedEmployees.ItemsSource = AssignedEmployee;
         }
@@ -66,7 +72,10 @@ namespace ProjectMain.UC
                 Description = JobDescription, JobName = JobTitle,
                 ID = JobId, Pry = (PriorityLevel) JobDescPriority.SelectedItem, 
                 TimeStarted = Time };
-            JobDel.Invoke(Make);
+
+            //!! INVOKE THE CREATE JOB AND CREATE EMPLOYEEJOB FOR DB HERE !!//
+            
+            //!! INVOKE THE CREATE JOB AND CREATE EMPLOYEEJOB FOR DB HERE !!//
             MessageBox.Show(JobTitle);
             WindowCloseBehaviour.SetClose(this, true);
         }
@@ -79,8 +88,8 @@ namespace ProjectMain.UC
 
         private void AddEmployee_Click(object sender, RoutedEventArgs e)
         {
-            Employees created = (Employees)JobDescJobEmployee.SelectedItem;
-            AssignedEmployee.Add((Employees)JobDescJobEmployee.SelectedItem);
+            Employee created = (Employee)JobDescJobEmployee.SelectedItem;
+            AssignedEmployee.Add((Employee)JobDescJobEmployee.SelectedItem);
         }
 
         private void AssignedEmployees_MouseRightButtonUp(object sender, 
