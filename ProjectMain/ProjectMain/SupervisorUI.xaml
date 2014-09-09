@@ -1,8 +1,8 @@
-﻿<Window x:Class="ProjectMain.SupervisorUI"
+﻿<UserControl x:Class="ProjectMain.SupervisorUI"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:m="clr-namespace:ProjectMain.UC"
-        Title="SupervisorUI" Height="675" Width="1200">
+        Height="675" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
         <ColumnDefinition Width="85*"/>
@@ -32,4 +32,4 @@
                     Click="DeleteJobButton_Click"/>
     </StackPanel>
     </Grid>
-</Window>
+</UserControl>

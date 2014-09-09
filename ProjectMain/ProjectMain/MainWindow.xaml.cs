@@ -12,24 +12,55 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjectMain.Models;
+using ProjectMain.SaveToDB;
+using ProjectMain.UC;
+
 
 namespace ProjectMain
 {
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public List<Job> localJobCollection;
+        public List<Employee> localEmployeeCollection;
+        public InAndOut io;
+
+        public string SQLPath;
+
+
         public MainWindow()
         {
             InitializeComponent();
-            this.Show();
+
+            SQLPath = "Data Source=IT-OJCFCBE76QAN;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+
+            io = new InAndOut();
+
+            localEmployeeCollection = io.GetEmployees("use AppDevLab; Select * from Employee;", SQLPath);
+
+            StartLogin();
+
+
         }
+      
+        public void StartLogin()
+        {
+            CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
+            CurrentView.Children.Add(new LogIn(localEmployeeCollection));
+        }
+
 
         private void NewSupervisor_Click(object sender, RoutedEventArgs e)
         {
             SupervisorUI maker = new SupervisorUI();
-            maker.Show();
+            CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
+            CurrentView.Children.Add(maker);
         }
 
 

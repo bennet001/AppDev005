@@ -58,7 +58,6 @@
     <Compile Include="Enums\Priority.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainController.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="NullToVisibilityConverter.cs" />
     <Compile Include="SaveToDB\InAndOut.cs" />

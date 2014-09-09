@@ -21,7 +21,7 @@ namespace ProjectMain
     /// <summary>
     /// Interaction logic for SupervisorUI.xaml
     /// </summary>
-    public partial class SupervisorUI : Window
+    public partial class SupervisorUI : UserControl
     {
         ObservableCollection<Job> jobs;
         StreamWriter sw;
