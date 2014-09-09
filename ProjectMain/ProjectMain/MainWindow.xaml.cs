@@ -39,7 +39,7 @@ namespace ProjectMain
         {
             InitializeComponent();
 
-            SQLPath = "Data Source=IT-OJCFCBE76QAN;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            SQLPath = "Data Source=IT-QKTM1Q0RFF8P\\SQLEXPRESS;Integrated Security=False;User ID=sa;Password=BenjaminCole001;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
 
             io = new InAndOut();
 
@@ -73,6 +73,9 @@ namespace ProjectMain
             SupervisorUI maker = new SupervisorUI(localJobCollection, localEmployeeCollection);
             maker.CreateJobEventHandler += CreateNewJob;
             CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
+            CurrentView.Height = 600;
+            CurrentView.Width = 800;
+            CurrentView.UpdateLayout();
             CurrentView.Children.Add(maker);
         }
 

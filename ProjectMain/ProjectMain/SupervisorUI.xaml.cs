@@ -61,11 +61,6 @@ namespace ProjectMain
 
             popupJobUC.CreateJobHandler += CreateJobEventFired;
             
-
-
-
-	
-
             JobUserControlWindow.Height = 300;
             JobUserControlWindow.Width = 300;
             JobUserControlWindow.MinHeight = 250;
@@ -89,6 +84,11 @@ namespace ProjectMain
             
             CreateJobEventHandler(this, e);
          
+        }
+
+        private void ShowChart_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
     }
