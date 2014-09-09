@@ -84,7 +84,7 @@ namespace ProjectMain
             set { isCompleted = value;}
         }
 
-        public Job(int jobID, int commonID, PriorityLevel priority, string describe, bool isCompleted = false, DateTime timeStart = default(DateTime), DateTime TimeDue = default(DateTime))
+        public Job(int jobID, int commonID, PriorityLevel priority, string describe, bool isCompleted = false, DateTime timeStart = default(DateTime), DateTime TimeDue = default(DateTime), string jobName = "")
 		{
             this.ID = jobID;
             this.CommonID = commonID;
@@ -94,6 +94,7 @@ namespace ProjectMain
             this.TimeDue = TimeDue;
             this.Pry = priority;
             this.isCompleted = isCompleted;
+            this.JobName = jobName;
 		}
         public Job()
         {

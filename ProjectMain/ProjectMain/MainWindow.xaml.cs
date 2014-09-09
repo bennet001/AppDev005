@@ -63,7 +63,7 @@ namespace ProjectMain
         {
             CurrentView.Children.RemoveRange(0, CurrentView.Children.Count);
 
-            CurrentView.Children.Add(new JobUC(io.GetJobByID(1, SQLPath)));
+            CurrentView.Children.Add(new JobUC(io.GetJobByID(2, SQLPath)));
         }
 
 
